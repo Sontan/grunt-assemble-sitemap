@@ -53,6 +53,9 @@ module.exports  = function (params, callback) {
   var url = options.homepage;
   var relativedest = options.relativedest;
 
+  if(options.host)
+    robots.push('Host: ' + options.host);
+
   async.forEach(pages, function (file, next) {
 
     if (!_.isUndefined(options.exclude)) {
